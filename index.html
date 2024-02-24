@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Léo Fontoura</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app" class="flex flex-col items-center justify-center min-h-screen bg-gray-900">
+        <!-- dark theme -->
+        <div class="container  m-4">
+            <div class="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
+
+                <div
+                    v-if="showNotification"
+                    class="flex flex-col justify-center p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
+                    <div class=" text-gray-400 flex items-center ">
+                        <p> See the game I'm developing here <a href="https://leosfont.itch.io/wizard-wars"
+                                class="underline hover:underline-none ml-1 text-green-300" target="_blank">Wizard
+                                Wars</a></p>
+                            <button type="button" @click="showNotification = false"
+                            class="ml-auto text-xs  font-medium tracking-wider  text-gray-400 text-gray-400 hover:text-green-400 transition ease-in duration-300"><svg
+                                xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg></button>
+                    </div>
+                </div>
+                <!-- profile card -->
+                <div class="flex flex-col sticky top-0 z-10">
+                    <div class="bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl p-4">
+                        <div class="flex-none sm:flex">
+                            <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                                <img src="https://avatars.githubusercontent.com/u/9754360?v=4" alt="aji"
+                                    class=" w-32 h-32 object-cover rounded-2xl">
+                            </div>
+                            <div class="flex-auto sm:ml-5 justify-evenly">
+                                <div class="flex items-center justify-between sm:mt-2">
+                                    <div class="flex items-center">
+                                        <div class="flex flex-col">
+                                            <div class="w-full flex-none text-lg text-gray-200 font-bold leading-none">
+                                                Léo Fontoura</div>
+                                            <div class="flex-auto text-gray-400 my-1">
+                                                <span class="mr-3 ">Senior Software Developer</span><span
+                                                    class="mr-3 border-r border-gray-600  max-h-0"></span><span>Viamão
+                                                    RS - BR</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row items-center">
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1 inline-flex   items-center ml-2 space-x-2">
+                                        <a href="https://www.linkedin.com/in/leosfont" target="_blank">
+                                            <svg class="cursor-pointer w-5 h-5 p-1  rounded-2xl hover:bg-blue-500 hover:text-white transition ease-in duration-300"
+                                                xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30"
+                                                height="30" viewBox="0 0 172 172" style=" fill:#ffffff;">
+                                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                                    font-weight="none" font-size="none" text-anchor="none"
+                                                    style="mix-blend-mode: normal">
+                                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                                    <g fill="#ffffff">
+                                                        <path
+                                                            d="M51.6,143.33333h-28.66667v-86h28.66667zM37.2724,45.86667c-7.9292,0 -14.33907,-6.42707 -14.33907,-14.33907c0,-7.912 6.42133,-14.3276 14.33907,-14.3276c7.90053,0 14.3276,6.42707 14.3276,14.3276c0,7.912 -6.42707,14.33907 -14.3276,14.33907zM154.8,143.33333h-27.56013v-41.85333c0,-9.98173 -0.1892,-22.81867 -14.3276,-22.81867c-14.35053,0 -16.55787,10.8704 -16.55787,22.09627v42.57573h-27.5544v-86.06307h26.4536v11.75907h0.37267c3.6808,-6.76533 12.6764,-13.8976 26.0924,-13.8976c27.92133,0 33.08133,17.82493 33.08133,40.99907z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <a href="https://www.github.com/leosfont" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="rounded-2xl hover:bg-blue-500 hover:text-white transition ease-in duration-300 w-3"
+                                                style="fill:#ffffff;" viewBox="0 0 496 512">
+                                                <path
+                                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex pt-2  text-sm text-gray-400">
+                                    <div class="flex-1 inline-flex items-center">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                            </path>
+                                        </svg>
+                                        <p class="">+1500 Connections</p> -->
+                                    </div>
+                                    <div class="flex-1 inline-flex items-center">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <p class="">+32 Clients</p> -->
+                                    </div>
+                                    <a href="https://api.whatsapp.com/send?phone=555185038783" target="_blank"
+                                        class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-500 hover:border-green-800 text-white rounded-full transition ease-in duration-300">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---stats-->
+                <div class="grid grid-cols-12 gap-4 ">
+                    <div class="col-span-12 sm:col-span-4">
+                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-14 w-14  absolute bottom-4 right-3 text-blue-500" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                            </svg>
+                            <div class="flex justify-between items-center ">
+                                <i class="fab fa-behance text-xl text-gray-400"></i>
+                            </div>
+                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">+{{projects.length}}</div>
+                            <div class="text-sm text-gray-500">Projects I worked on</div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-4">
+                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-14 w-14  absolute bottom-4 right-3 text-green-400" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+                            </svg>
+                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">{{technologies.length}}</div>
+                            <div class="text-sm text-gray-500">Technologies used</div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-4">
+                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-14 w-14  absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <div class="flex justify-between items-center ">
+                                <i class="fab fa-codepen text-xl text-gray-400"></i>
+                            </div>
+                            <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
+                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">Coming soon</div>
+                            <div class="text-sm text-gray-500">Feedbacks</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-3 text-white">Projects I worked on</h3>
+                <div v-for="project in projects" class="flex flex-col">
+                    <div class="p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
+                        <div class="flex-none lg:flex">
+                            <div v-if="project.image" class="h-full w-full lg:h-36 lg:w-36 lg:mb-0 mb-3">
+                                <img :src="project.image" alt="Project Image" class="w-full object-scale-down lg:object-cover lg:h-36 rounded-2xl">
+                            </div>
+                            <div class="flex-auto lg:ml-3 justify-evenly py-2">
+                                <div class="flex flex-col ">
+                                    <div class="flex items-center  justify-between min-w-0">
+                                        <h2 class="mr-auto   text-base text-gray-100 font-medium truncate">{{ project.name }}
+                                        </h2>
+                                        <div class="flex items-center font-medium text-gray-300 ">
+                                            {{ project.duration }}
+                                        </div>
+                                    </div>
+                                    <p class="flex items-center text-sm text-gray-400">
+                                        <span class="mr-3" v-for="tech in project.devops">{{ tech }}</span>
+                                        <span
+                                            class="relative inline-flex rounded-md shadow-sm ml-2">
+                                            <span class="flex absolute h-2 w-2 top-0 right-0 -mt-1 -mr-1">
+                                                <span
+                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                                <span
+                                                    class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                            </span>
+                                        </span>
+
+                                    </p>
+                                </div>
+                                <div class="flex my-3 border-t border-gray-800 "></div>
+                                <div class="flex flex-col text-sm font-medium">
+                                    <div v-if="project.methodology" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-purple-500">
+                                        <span>Methodology: {{ project.methodology }}</span>
+                                    </div>
+                                    <div class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-gray-500 mt-3">
+                                        <span>Technologies:</span> <span v-for="tech in project.technologies">{{ tech }}</span>
+                                    </div>
+                                    <div v-if="project.integrations?.length" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-yellow-500 mt-3">
+                                        <span>Integrations:</span> <span v-for="integration in project.integrations">{{ integration }}</span>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

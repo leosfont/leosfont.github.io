@@ -1,0 +1,128 @@
+[
+  {
+      "name": "CMS: Facilitation of automotive websites",
+      "image": null,
+      "methodology": "Kanban",
+      "technologies": ["Git", "PHP", "CSS", "Mysql", "Laravel", "Javascript", "Bootstrap", "Jquery"],
+      "devops": ["Jira", "Bitbucket"],
+      "duration": "2015"
+  },
+  {
+      "name": "Creation of automotive websites",
+      "image": null,
+      "methodology": "Kanban",
+      "technologies": ["Git", "PHP", "CSS", "Mysql", "Silex Framework", "Javascript", "Jquery", "Bootstrap", "October Framework", "Twig"],
+      "devops": ["Jira", "Bitbucket"],
+      "duration": "2015-2018"
+  },
+  {
+      "name": "CMS v2: Facilitation of automotive websites",
+      "image": null,
+      "methodology": "Kanban",
+      "technologies": ["Git", "PHP", "CSS", "Sass", "Mysql", "October Framework", "Javascript", "Bootstrap", "Jquery", "Vue2"],
+      "devops": ["Jira", "Bitbucket"],
+      "duration": "2018-2019"
+  },
+  {
+    "name": "Designer portfolio website creation",
+    "image": null,
+    "methodology": "Kanban",
+    "technologies": ["Git", "PHP", "CSS", "Wordpress", "Mysql", "Javascript", "Bootstrap", "Jquery"],
+    "devops": ["Hostgator"],
+    "duration": "2019"
+  },
+  {
+      "name": "Subscription portal for advertisers",
+      "image": null,
+      "methodology": "Kanban",
+      "technologies": ["Git", "PHP", "Mysql", "CSS", "Phalcon Framework", "Javascript", "Jquery", "Bootstrap", "Angular"],
+      "devops": ["SSH"],
+      "duration": "2018-2019"
+  },
+  {
+    "name": "Used car sales website",
+    "image": null,
+    "methodology": "Kanban",
+    "technologies": ["Git", "PHP", "Mysql", "CSS", "Codeigniter Framework", "Javascript", "Jquery", "Bootstrap", "Angular"],
+    "devops": ["Bitbucket", "Jira"],
+    "duration": "2018-2019"
+  },
+  {
+    "name": "Real estate system",
+    "image": null,
+    "methodology": "Kanban",
+    "technologies": ["Git", "PHP", "Mysql", "CSS", "Wordpress", "Javascript", "Jquery", "Bootstrap"],
+    "devops": ["SSH"],
+    "duration": "2019"
+  },
+  {
+      "name": "System for dentistry",
+      "image": null,
+      "methodology": "Kanban",
+      "technologies": ["Git", "Docker", "PHP", "Mysql", "Eloquent", "Jquery", "Ajax", "Vue.js"],
+      "devops": ["Bitbucket", "Kinghost"],
+      "integrations": ["Asaas"],
+      "duration": "2021"
+  },
+  {
+      "name": "Service and plugin for payment with pix in installments",
+      "image": null,
+      "methodology": "Scrum",
+      "technologies": ["Git", "TDD", "DynamoDB", "Codacy", "Kafka", "Golang", "Bazel", "Microservices", "gRPC"],
+      "devops": ["Azure DevOps", "AWS"],
+      "integrations": ["Open Finance", "Keyclock"],
+      "duration": "2022"
+  },
+  {
+      "name": "Shoe making system",
+      "image": null,
+      "methodology": "Scrum",
+      "technologies": ["Git", "Docker", "TDD", "Python", "Pandas", "Lambda", "NestJS", "React"],
+      "devops": ["Azure DevOps", "AWS"],
+      "duration": "2022"
+  },
+  {
+      "name": "System and website for architects",
+      "image": null,
+      "methodology": "Kanban",
+      "technologies": ["Git", "Docker", "Mysql", "PHP", "Laravel", "Javascript", "Vue"],
+      "devops": ["Github", "Kinghost"],
+      "duration": "2022"
+  },
+  {
+      "name": "Personalized E-Commerce For Selling Plants",
+      "image": null,
+      "methodology": "Kanban",
+      "technologies": ["Git", "Docker", "Mysql", "PHP", "Laravel", "Javascript", "Vue"],
+      "devops": ["Github", "Kinghost"],
+      "integrations": ["Asaas", "MelhorEnvio"],
+      "duration": "2022"
+  },
+  {
+      "name": "System For Medicine Online",
+      "image": null,
+      "methodology": "Scrum",
+      "technologies": ["Git", "Docker", "TDD", "Mysql", "Typescript", "NestJS", "JWT", "TypeORM", "Swagger", "React"],
+      "devops": ["Azure DevOps", "AWS"],
+      "duration": "2023"
+  },
+  {
+      "name": "System and portal for consultants",
+      "image": null,
+      "methodology": "Scrum",
+      "technologies": [
+          "Git", "Test Integration", "Docker", "Mysql", "PHP", "Laravel", "Queue", "Redis", "Lumen Microservices", "Node", "Javascript", "Jquery", "Bootstrap", "Vue"
+      ],
+      "devops": ["Jira" ,"Azure DevOps", "Jelastic", "AWS", "EC2", "SES", "S3", "RDS", "Kubernetes"],
+      "duration": "2019-2024"
+  },
+  {
+      "name": "System ERP and Site (E-Commerce)",
+      "image": null,
+      "methodology": "Scrum",
+      "technologies": ["Git", "Docker", "Mysql", "PHP", "CakePHP2", "October", "Javascript", "Jquery"],
+      "devops": ["Jira", "Azure DevOps", "Jelastic", "AWS"],
+      "integrations": ["Itaú", "Sefaz"],
+      "duration": "2019-2024"
+  }
+]
