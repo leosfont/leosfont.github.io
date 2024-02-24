@@ -43,7 +43,7 @@
     "name": "Used car sales website",
     "image": null,
     "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "Mysql", "CSS", "Codeigniter Framework", "Javascript", "Jquery", "Bootstrap", "Angular"],
+    "technologies": ["Git", "PHP", "Mysql", "CSS", "Codeigniter Framework", "Javascript", "Jquery", "Bootstrap"],
     "devops": ["Bitbucket", "Jira"],
     "duration": "2018-2019"
   },
