@@ -37,7 +37,7 @@
                     <div class="bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl p-4">
                         <div class="flex-none sm:flex">
                             <div class=" relative h-32 w-32   sm:mb-0 mb-3">
-                                <img src="https://avatars.githubusercontent.com/u/9754360?v=4" alt="aji"
+                                <img :src="gitHubProfile.avatar_url" alt="aji"
                                     class=" w-32 h-32 object-cover rounded-2xl">
                             </div>
                             <div class="flex-auto sm:ml-5 justify-evenly">
@@ -45,11 +45,10 @@
                                     <div class="flex items-center">
                                         <div class="flex flex-col">
                                             <div class="w-full flex-none text-lg text-gray-200 font-bold leading-none">
-                                                Léo Fontoura</div>
+                                                {{ gitHubProfile.name }}</div>
                                             <div class="flex-auto text-gray-400 my-1">
-                                                <span class="mr-3 ">Senior Software Developer</span><span
-                                                    class="mr-3 border-r border-gray-600  max-h-0"></span><span>Viamão
-                                                    RS - BR</span>
+                                                <span class="mr-3 ">{{ gitHubProfile.bio }}</span><span
+                                                    class="mr-3 border-r border-gray-600  max-h-0"></span><span>{{ gitHubProfile.location }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -142,7 +141,7 @@
                 </div>
                 <!---stats-->
                 <div class="grid grid-cols-12 gap-4 ">
-                    <div class="col-span-12 sm:col-span-4">
+                    <div class="col-span-12 sm:col-span-4 cursor-pointer" aria-label="button" @click="currentComponent = 'projects'">
                         <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="h-14 w-14  absolute bottom-4 right-3 text-blue-500" viewBox="0 0 20 20"
@@ -157,6 +156,20 @@
                             <div class="text-sm text-gray-500">Projects I worked on</div>
                         </div>
                     </div>
+                    <a :href="gitHubProfile.repos_url" target="_blank" class="col-span-12 sm:col-span-4">
+                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-14 w-14  absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 640 512">
+                                fill
+                                <path fill="#B197FC" d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/>
+                            </svg>
+                            <div class="flex justify-between items-center ">
+                                <i class="fab fa-codepen text-xl text-gray-400"></i>
+                            </div>
+                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">{{ gitHubProfile.public_repos }}</div>
+                            <div class="text-sm text-gray-500">Public Repositories</div>
+                        </div>
+                    </a>
                     <div class="col-span-12 sm:col-span-4">
                         <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -167,6 +180,36 @@
                             </svg>
                             <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">{{technologies.length}}</div>
                             <div class="text-sm text-gray-500">Technologies used</div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-4">
+                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-12 w-12  absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 512 512"
+                                fill="currentColor">
+                                <path fill="#68e5ee" d="M168 80c-13.3 0-24 10.7-24 24V408c0 8.4-1.4 16.5-4.1 24H440c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 480c-39.8 0-72-32.2-72-72V112C0 98.7 10.7 88 24 88s24 10.7 24 24V408c0 13.3 10.7 24 24 24s24-10.7 24-24V104c0-39.8 32.2-72 72-72H440c39.8 0 72 32.2 72 72V408c0 39.8-32.2 72-72 72H72zM176 136c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v80c0 13.3-10.7 24-24 24H200c-13.3 0-24-10.7-24-24V136zm200-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+                            </svg>
+                            <div class="flex justify-between items-center ">
+                                <i class="fab fa-codepen text-xl text-gray-400"></i>
+                            </div>
+                            <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
+                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">Coming soon</div>
+                            <div class="text-sm text-gray-500">Blog Posts</div>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-4">
+                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-12 w-12  absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 640 512"
+                                fill="currentColor">
+                                <path fill="#ff5781" d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/>
+                            </svg>
+                            <div class="flex justify-between items-center ">
+                                <i class="fab fa-codepen text-xl text-gray-400"></i>
+                            </div>
+                            <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
+                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">Coming soon</div>
+                            <div class="text-sm text-gray-500">Games developed</div>
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-4">
@@ -186,6 +229,8 @@
                             <div class="text-sm text-gray-500">Feedbacks</div>
                         </div>
                     </div>
+               
+                    
                 </div>
                 <h3 class="mt-3 text-white">Projects I worked on</h3>
                 <div v-for="project in projects" class="flex flex-col">
