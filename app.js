@@ -62,7 +62,7 @@ new Vue({
             .then(response => response.json())
             .then(data => {
                 this.gitHubRepositories = data;
-                console.log(this.gitHubProfile);
+                console.log(this.gitHubRepositories);
             })
             .catch(error => console.log(error));
         }

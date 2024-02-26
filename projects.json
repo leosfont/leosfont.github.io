@@ -5,7 +5,7 @@
     "image": null,
     "methodology": "Scrum",
     "technologies": [
-      "Git", "Test Integration", "Docker", "Mysql", "PHP", "Laravel", "Queue", "Redis", "Lumen Microservices", "Node", "Express", "Javascript", "Jquery", "Bootstrap", "Vue", "Firebase", "Sonarqube"
+      "Git", "Test Integration", "Docker", "Mysql", "PHP", "Laravel", "Redis", "Lumen", "Node", "Express", "Javascript", "Jquery", "Microservices", "Bootstrap", "Vue", "Firebase", "Sonarqube"
     ],
     "devops": ["Jira" ,"Azure DevOps", "Jelastic", "AWS", "EC2", "SES", "S3", "RDS", "Kubernetes"],
     "duration": "2019-2024"
@@ -75,14 +75,13 @@
     "image": null,
     "methodology": "Kanban",
     "technologies": ["Git", "PHP", "Mysql", "CSS", "Wordpress", "Javascript", "Jquery", "Bootstrap"],
-    "devops": ["SSH"],
     "duration": "2019"
   },
   {
     "name": "Used car sales website",
     "image": null,
     "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "Mysql", "CSS", "Codeigniter Framework", "Javascript", "Jquery", "Bootstrap"],
+    "technologies": ["PHP", "Mysql", "CSS", "Codeigniter Framework", "Javascript", "Jquery", "Bootstrap"],
     "devops": ["Bitbucket", "Jira"],
     "duration": "2018-2019"
   },
@@ -90,8 +89,7 @@
     "name": "Subscription portal for advertisers",
     "image": null,
     "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "Mysql", "CSS", "Phalcon Framework", "Javascript", "Jquery", "Bootstrap", "Angular"],
-    "devops": ["SSH"],
+    "technologies": ["PHP", "Mysql", "CSS", "Phalcon Framework", "Javascript", "Jquery", "Bootstrap", "Angular"],
     "duration": "2018-2019"
   },
   {
