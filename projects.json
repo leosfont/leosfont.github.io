@@ -1,6 +1,16 @@
 
 [
   {
+    "name": "API for file loading and prompts for AI reading",
+    "image": null,
+    "methodology": "Kanban",
+    "technologies": [
+      "Git", "Docker", "Python", "Boto3", "Fastapi", "LangChain", "Mongo", "Pydandic", "Redis", "OpenAI", "Embedding", "S3"
+    ],
+    "devops": ["Azure DevOps", "AWS", "EC2", "S3", "RDS", "Kubernetes"],
+    "duration": "2024"
+  },
+  {
     "name": "System and portal for consultants",
     "image": null,
     "methodology": "Scrum",
