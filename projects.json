@@ -1,137 +1,238 @@
 
 [
   {
-    "name": "API for file loading and prompts for AI reading",
+    "company_name": "Vortigo",
+    "project_name": "API for file loading and prompts for AI reading",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": [
-      "Git", "Docker", "Python", "Boto3", "Fastapi", "LangChain", "Mongo", "Pydandic", "Redis", "OpenAI", "Embedding", "S3"
+    "methodologies": ["Kanban"],
+    "develop_technologies": [
+      "Git", "Docker", "Python", "Boto3", "FastAPI", "LangChain", "Mongo", "Pydantic", "Redis", "OpenAI", "Embedding", "S3"
     ],
-    "devops": ["Azure DevOps", "AWS", "EC2", "S3", "RDS", "Kubernetes"],
-    "duration": "2024"
+    "devops_technologies": ["Azure DevOps", "AWS", "SES", "EC2", "S3", "RDS", "Kubernetes"],
+    "integrations": ["OpenAI", "Stripe"],
+    "duration": "2024",
+    "description": "Worked on creating a service and RAG API for assistant control and document importation for use with language models."
   },
   {
-    "name": "System and portal for consultants",
+    "company_name": "Vortigo",
+    "project_name": "System and portal for consultants",
     "image": null,
-    "methodology": "Scrum",
-    "technologies": [
-      "Git", "Test Integration", "Docker", "Mysql", "PHP", "Laravel", "Redis", "Lumen", "Node", "Express", "Javascript", "Jquery", "Microservices", "Bootstrap", "Vue", "Firebase", "Sonarqube"
+    "methodologies": ["Kanban", "Scrum"],
+    "develop_technologies": [
+      "Git", "Test Integration", "Docker", "MySQL", "PHP", "Laravel", "Redis", "Lumen", "Node", "Express", "JavaScript", "jQuery", "Microservices", "Bootstrap", "Vue", "Firebase", "SonarQube"
     ],
-    "devops": ["Jira" ,"Azure DevOps", "Jelastic", "AWS", "EC2", "SES", "S3", "RDS", "Kubernetes"],
-    "duration": "2019-2024"
+    "devops_technologies": ["Jira", "Azure DevOps", "Jelastic", "AWS", "EC2", "SES", "S3", "RDS", "Kubernetes"],
+    "duration": "2019-2024",
+    "description": "Worked on adjustments and development of components and new features: creation of CMS for portal content control, import service."
   },
   {
-    "name": "System ERP and Site (E-Commerce)",
+    "company_name": "Vortigo",
+    "project_name": "ERP System and E-Commerce Site",
     "image": null,
-    "methodology": "Scrum",
-    "technologies": ["Git", "Docker", "Mysql", "PHP", "CakePHP2", "October", "Javascript", "Jquery"],
-    "devops": ["Jira", "Azure DevOps", "Jelastic", "AWS"],
-    "integrations": ["Rede", "Sped Nfe"],
-    "duration": "2019-2024"
+    "methodologies": ["Kanban", "Scrum"],
+    "develop_technologies": ["Git", "Docker", "MySQL", "PHP", "CakePHP2", "October", "JavaScript", "jQuery"],
+    "devops_technologies": ["Jira", "Azure DevOps", "Jelastic", "AWS"],
+    "integrations": ["Rede", "Sped NFe"],
+    "duration": "2019-2024",
+    "description": "Worked on adjustments and development of components and new features: payment flow, reports, website content control, and more."
   },
   {
-    "name": "System For Medicine Online",
+    "company_name": "Vortigo",
+    "project_name": "System for Online Medicine",
     "image": null,
-    "methodology": "Scrum",
-    "technologies": ["Git", "Docker", "TDD", "Mysql", "Typescript", "NestJS", "JWT", "TypeORM", "Swagger", "React"],
-    "devops": ["Azure DevOps", "AWS"],
-    "duration": "2023"
+    "methodologies": ["Scrum"],
+    "develop_technologies": ["Git", "Docker", "TDD", "MySQL", "TypeScript", "NestJS", "JWT", "TypeORM", "Swagger", "React"],
+    "devops_technologies": ["Azure DevOps", "AWS"],
+    "duration": "2023",
+    "description": "Worked on adjustments and functionalities for the back-office part of the platform."
   },
   {
-    "name": "Personalized E-Commerce For Selling Plants",
+    "company_name": "Orquidario Santo Expedito",
+    "project_name": "Personalized E-Commerce for Selling Plants",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "Docker", "Mysql", "PHP", "Laravel", "Javascript", "Vue"],
-    "devops": ["Github", "Kinghost"],
-    "integrations": ["Asaas", "MelhorEnvio"],
-    "duration": "2022"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "Docker", "MySQL", "PHP", "Laravel", "JavaScript", "Vue"],
+    "devops_technologies": ["GitHub", "Kinghost"],
+    "integrations": ["Asaas", "MelhorEnvio", "Frenet"],
+    "duration": "2022",
+    "description": "Worked on the complete creation of the store and CMS for order control and website content."
   },
   {
-    "name": "System and website for architects",
+    "company_name": "Token Arquitetura",
+    "project_name": "System and Website for Architects",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "Docker", "Mysql", "PHP", "Laravel", "Javascript", "Vue"],
-    "devops": ["Github", "Kinghost"],
-    "duration": "2022"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "Docker", "MySQL", "PHP", "Laravel", "JavaScript", "Vue"],
+    "devops_technologies": ["GitHub", "Kinghost"],
+    "duration": "2022",
+    "description": "Worked on the complete creation of the portfolio and system for document exchange with end clients."
   },
   {
-    "name": "Shoe making system",
+    "company_name": "Vortigo",
+    "project_name": "Shoe Manufacturing System",
     "image": null,
-    "methodology": "Scrum",
-    "technologies": ["Git", "Docker", "TDD", "Python", "Pandas", "Lambda", "NestJS", "React"],
-    "devops": ["Azure DevOps", "AWS"],
-    "duration": "2022"
+    "methodologies": ["Scrum"],
+    "develop_technologies": ["Git", "Docker", "TDD", "Python", "Pandas", "Lambda", "NestJS", "React"],
+    "devops_technologies": ["Azure DevOps", "AWS"],
+    "duration": "2022",
+    "description": "Worked on developing functionalities for the shoe import flow."
   },
   {
-    "name": "Service and plugin for payment with pix in installments",
+    "company_name": "Vortigo",
+    "project_name": "Service and Plugin for Payment with Pix in Installments",
     "image": null,
-    "methodology": "Scrum",
-    "technologies": ["Git", "TDD", "DynamoDB", "Codacy", "Kafka", "Golang", "Bazel", "Microservices", "gRPC"],
-    "devops": ["Azure DevOps", "AWS"],
-    "integrations": ["Open Finance", "Keyclock"],
-    "duration": "2022"
+    "methodologies": ["Scrum"],
+    "develop_technologies": ["Git", "TDD", "DynamoDB", "Codacy", "Kafka", "Golang", "Bazel", "Microservices", "gRPC"],
+    "devops_technologies": ["Azure DevOps", "AWS"],
+    "integrations": ["Open Finance", "Keycloak"],
+    "duration": "2022",
+    "description": "Worked on developing functionalities for the registration and payment flow."
   },
   {
-    "name": "System for dentistry",
+    "company_name": "Oral Brasil",
+    "project_name": "System for Dentistry",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "Docker", "PHP", "Mysql", "Eloquent", "Jquery", "Ajax", "Vue.js"],
-    "devops": ["Bitbucket", "Kinghost"],
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "Docker", "PHP", "MySQL", "Eloquent", "jQuery", "Ajax", "Vue.js"],
+    "devops_technologies": ["Bitbucket", "Kinghost"],
     "integrations": ["Asaas"],
-    "duration": "2021"
+    "duration": "2021",
+    "description": "Worked on adjustments and creation of components, as well as reporting functionalities and payment integrations."
+  },
+ {
+    "company_name": "RGK Investimentos Imobiliários",
+    "project_name": "Real Estate System",
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "MySQL", "CSS", "WordPress", "JavaScript", "jQuery", "Bootstrap"],
+    "duration": "2019",
+    "description": "Worked on adjustments and component creation, as well as functionalities and integrations with real estate portals."
   },
   {
-    "name": "Real estate system",
+    "company_name": "Reweb",
+    "project_name": "Used Car Sales Website",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "Mysql", "CSS", "Wordpress", "Javascript", "Jquery", "Bootstrap"],
-    "duration": "2019"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["PHP", "MySQL", "CSS", "CodeIgniter Framework", "JavaScript", "jQuery", "Bootstrap"],
+    "devops_technologies": ["Bitbucket", "Jira"],
+    "duration": "2018-2019",
+    "description": "Worked on adjustments and creation of functionalities: development of components and additional screen filter."
   },
   {
-    "name": "Used car sales website",
+    "company_name": "Reweb",
+    "project_name": "Subscription Portal for Advertisers",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["PHP", "Mysql", "CSS", "Codeigniter Framework", "Javascript", "Jquery", "Bootstrap"],
-    "devops": ["Bitbucket", "Jira"],
-    "duration": "2018-2019"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["PHP", "MySQL", "CSS", "Phalcon Framework", "JavaScript", "jQuery", "Bootstrap", "Angular"],
+    "duration": "2018-2019",
+    "description": "Worked on adjustments and creation of functionalities: development of reports and reCAPTCHA in the payment flow."
   },
   {
-    "name": "Subscription portal for advertisers",
+    "company_name": "Fernando Jobin",
+    "project_name": "Designer Portfolio Website Creation",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["PHP", "Mysql", "CSS", "Phalcon Framework", "Javascript", "Jquery", "Bootstrap", "Angular"],
-    "duration": "2018-2019"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "WordPress", "MySQL", "JavaScript", "Bootstrap", "jQuery"],
+    "devops_technologies": ["Hostgator"],
+    "duration": "2019",
+    "description": "Worked on the complete creation of the portfolio."
   },
   {
-    "name": "Designer portfolio website creation",
+    "company_name": "Reweb",
+    "project_name": "CMS v2: Facilitation of Automotive Websites",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "CSS", "Wordpress", "Mysql", "Javascript", "Bootstrap", "Jquery"],
-    "devops": ["Hostgator"],
-    "duration": "2019"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "Sass", "MySQL", "October Framework", "JavaScript", "Bootstrap", "jQuery", "Vue2"],
+    "devops_technologies": ["Jira", "Bitbucket"],
+    "duration": "2018-2019",
+    "description": "Worked on adjustments, creation of functionalities, and creation of components for the development of automotive websites."
   },
   {
-    "name": "CMS v2: Facilitation of automotive websites",
+    "company_name": "Reweb",
+    "project_name": "Creation of Automotive Websites",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "CSS", "Sass", "Mysql", "October Framework", "Javascript", "Bootstrap", "Jquery", "Vue2"],
-    "devops": ["Jira", "Bitbucket"],
-    "duration": "2018-2019"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "MySQL", "Silex Framework", "JavaScript", "jQuery", "Bootstrap", "Twig"],
+    "devops_technologies": ["Jira", "Bitbucket"],
+    "duration": "2015-2018",
+    "description": "Worked on adjustments and creation of automotive websites using the previously developed CMS."
   },
   {
-    "name": "Creation of automotive websites",
+    "company_name": "Reweb",
+    "project_name": "CMS: Facilitation of Automotive Websites",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "CSS", "Mysql", "Silex Framework", "Javascript", "Jquery", "Bootstrap", "October Framework", "Twig"],
-    "devops": ["Jira", "Bitbucket"],
-    "duration": "2015-2018"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "MySQL", "Laravel", "JavaScript", "Bootstrap", "jQuery"],
+    "devops_technologies": ["Jira", "Bitbucket"],
+    "duration": "2015",
+    "description": "Worked on adjustments and implementations such as theme creation and alteration functionality for the websites among other functionalities."
   },
   {
-    "name": "CMS: Facilitation of automotive websites",
+    "company_name": "RGK Investimentos Imobiliários",
+    "project_name": "Real Estate System",
     "image": null,
-    "methodology": "Kanban",
-    "technologies": ["Git", "PHP", "CSS", "Mysql", "Laravel", "Javascript", "Bootstrap", "Jquery"],
-    "devops": ["Jira", "Bitbucket"],
-    "duration": "2015"
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "MySQL", "CSS", "WordPress", "JavaScript", "jQuery", "Bootstrap"],
+    "duration": "2019",
+    "description": "Worked on adjustments and component creation, as well as functionalities and integrations with real estate portals."
+  },
+  {
+    "company_name": "Reweb",
+    "project_name": "Used Car Sales Website",
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["PHP", "MySQL", "CSS", "CodeIgniter Framework", "JavaScript", "jQuery", "Bootstrap"],
+    "devops_technologies": ["Bitbucket", "Jira"],
+    "duration": "2018-2019",
+    "description": "Worked on adjustments and creation of functionalities: development of components and additional screen filter."
+  },
+  {
+    "company_name": "Reweb",
+    "project_name": "Subscription Portal for Advertisers",
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["PHP", "MySQL", "CSS", "Phalcon Framework", "JavaScript", "jQuery", "Bootstrap", "Angular"],
+    "duration": "2018-2019",
+    "description": "Worked on adjustments and creation of functionalities: development of reports and reCAPTCHA in the payment flow."
+  },
+  {
+    "company_name": "Fernando Jobin",
+    "project_name": "Designer Portfolio Website Creation",
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "WordPress", "MySQL", "JavaScript", "Bootstrap", "jQuery"],
+    "devops_technologies": ["Hostgator"],
+    "duration": "2019",
+    "description": "Worked on the complete creation of the portfolio."
+  },
+  {
+    "company_name": "Reweb",
+    "project_name": "CMS v2: Facilitation of Automotive Websites",
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "Sass", "MySQL", "October Framework", "JavaScript", "Bootstrap", "jQuery", "Vue2"],
+    "devops_technologies": ["Jira", "Bitbucket"],
+    "duration": "2018-2019",
+    "description": "Worked on adjustments, creation of functionalities, and creation of components for the development of automotive websites."
+  },
+  {
+    "company_name": "Reweb",
+    "project_name": "Creation of Automotive Websites",
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "MySQL", "Silex Framework", "JavaScript", "jQuery", "Bootstrap", "Twig"],
+    "devops_technologies": ["Jira", "Bitbucket"],
+    "duration": "2015-2018",
+    "description": "Worked on adjustments and creation of automotive websites using the previously developed CMS."
+  },
+  {
+    "company_name": "Reweb",
+    "project_name": "CMS: Facilitation of Automotive Websites",
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Git", "PHP", "CSS", "MySQL", "Laravel", "JavaScript", "Bootstrap", "jQuery"],
+    "devops_technologies": ["Jira", "Bitbucket"],
+    "duration": "2015",
+    "description": "Worked on adjustments and implementations such as theme creation and alteration functionality for the websites among other functionalities."
   }
 ]

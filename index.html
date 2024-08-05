@@ -15,7 +15,7 @@
         <div class="container  m-4">
             <div class="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
 
-                <div
+                <!-- <div
                     v-if="showNotification"
                     class="flex flex-col justify-center p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
                     <div class=" text-gray-400 flex items-center ">
@@ -30,7 +30,7 @@
                                     clip-rule="evenodd"></path>
                             </svg></button>
                     </div>
-                </div>
+                </div> -->
                 <!-- profile card -->
                 <div class="flex flex-col sticky top-0 z-10">
                     <div class="bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl p-4">
@@ -131,8 +131,17 @@
                                         </svg>
                                         <p class="">{{ gitHubProfile.following }} Following</p>
                                     </div>
-                                    <a href="https://api.whatsapp.com/send?phone=555185038783" target="_blank"
-                                        class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-500 hover:border-green-800 text-white rounded-full transition ease-in duration-300">Contact</a>
+                                    <button
+                                        @click="printCV()"
+                                        class="flex-no-shrink bg-blue-400 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-blue-500 hover:border-blue-800 text-white rounded-full transition ease-in duration-300">
+                                        Print CV
+                                    </button>
+                                    <a 
+                                        :href="'https://api.whatsapp.com/send?phone=' + contact.whatsappPhone"
+                                        target="_blank"
+                                        class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-500 hover:border-green-800 text-white rounded-full transition ease-in duration-300">
+                                        Contact
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +241,7 @@
                     
                 </div>
                 <h3 class="mt-3 text-white">Projects I worked on</h3>
-                <div v-for="project in projects" class="flex flex-col">
+                <div id="projects" v-for="project in projects" class="flex flex-col">
                     <div class="p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
                         <div class="flex-none lg:flex">
                             <div v-if="project.image" class="h-full w-full lg:h-36 lg:w-36 lg:mb-0 mb-3">
@@ -241,28 +250,36 @@
                             <div class="flex-auto lg:ml-3 justify-evenly py-2">
                                 <div class="flex flex-col ">
                                     <div class="flex items-center  justify-between min-w-0">
-                                        <h2 class="mr-auto   text-base text-gray-100 font-medium truncate">{{ project.name }}
+                                        
+                                        <h2 class="mr-auto   text-base text-gray-100 font-medium truncate">
+                                            <div class="text-gray-400 text-xs">Project name:</div>
+                                            {{ project.project_name }}<br>
+                                            <div class="text-xs text-purple-500">Company: {{ project.company_name }}</div>
                                         </h2>
                                         <div class="flex items-center font-medium text-gray-300 ">
                                             {{ project.duration }}
                                         </div>
                                     </div>
-                                    <p class="flex items-center text-sm text-gray-400">
-                                        <span class="mr-3" v-for="tech in project.devops">{{ tech }}</span>
-                                    </p>
                                 </div>
-                                <div class="flex my-3 border-t border-gray-800 "></div>
-                                <div class="flex flex-col text-sm font-medium">
-                                    <div v-if="project.methodology" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-purple-500">
-                                        <span>Methodology: {{ project.methodology }}</span>
+                                <div class="flex flex-col text-sm font-medium mt-3">
+                                    <div class="text-white text-sm mt-3">Devops Technologies:</div>
+                                    <p class="flex items-center text-sm text-gray-400">
+                                        <span class="mr-3" v-for="tech in project.devops_technologies">{{ tech }}</span>
+                                    </p>
+                                    <div v-if="project.methodologies?.length" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-green-300 mt-3">
+                                        Methodologies:<br> <span v-for="meth in project.methodologies">{{ meth }}</span></span>
                                     </div>
-                                    <div class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-gray-500 mt-3">
-                                        <span>Technologies:</span> <span v-for="tech in project.technologies">{{ tech }}</span>
+                                    <div class="text-white text-sm mt-3">Develop Technologies:</div>
+                                    <div class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-gray-500">
+                                        <span v-for="tech in project.develop_technologies">{{ tech }}</span>
                                     </div>
                                     <div v-if="project.integrations?.length" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-yellow-500 mt-3">
-                                        <span>Integrations:</span> <span v-for="integration in project.integrations">{{ integration }}</span>
+                                        Integrations:<br> <span v-for="integration in project.integrations">{{ integration }}</span>
                                     </div>
-                                  
+                                    <div class="mt-3 text-white" v-if="project.description">
+                                        Description:<br>
+                                        <span class="text-xs text-gray-400">{{ project.description }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
