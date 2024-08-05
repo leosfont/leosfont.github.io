@@ -89,7 +89,7 @@ new Vue({
                             <p><strong>Address:</strong> ${this.gitHubProfile.location}</p>
                             <p><strong>Email:</strong> ${this.contact.email}</p>
                             <p><strong>Phone/Whatsapp:</strong> ${this.contact.whatsappPhone}</p>
-                            <p><strong>Blog:</strong> <a href="${this.gitHubProfile.blog}" class="text-blue-500 underline" target="_blank">${this.gitHubProfile.blog}</a></p>
+                            <p><strong>Portfolio:</strong> <a href="${this.gitHubProfile.blog}" class="text-blue-500 underline" target="_blank">${this.gitHubProfile.blog}</a></p>
                         </section>
                         
                         <section>
