@@ -14,7 +14,12 @@
         <!-- dark theme -->
         <div class="container  m-4">
             <div class="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
-
+                <div class="flex justify-end w-full p-4">
+                    <select v-model="language" @change="changeLanguage" class="bg-gray-800 text-white p-2 rounded">
+                        <option value="en">EN</option>
+                        <option value="pt">PT</option>
+                    </select>
+                </div>
                 <!-- <div
                     v-if="showNotification"
                     class="flex flex-col justify-center p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
@@ -36,7 +41,7 @@
                     <div class="bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl p-4">
                         <div class="flex-none sm:flex">
                             <div class=" relative h-32 w-32   sm:mb-0 mb-3">
-                                <img :src="gitHubProfile.avatar_url" alt="aji"
+                                <img :src="user.avatar" alt="aji"
                                     class=" w-32 h-32 object-cover rounded-2xl">
                             </div>
                             <div class="flex-auto sm:ml-5 justify-evenly">
@@ -44,10 +49,10 @@
                                     <div class="flex items-center">
                                         <div class="flex flex-col">
                                             <div class="w-full flex-none text-lg text-gray-200 font-bold leading-none">
-                                                {{ gitHubProfile.name }}</div>
+                                                {{ user.name }}</div>
                                             <div class="flex-auto text-gray-400 my-1">
-                                                <span class="mr-3 ">{{ gitHubProfile.bio }}</span><span
-                                                    class="mr-3 border-r border-gray-600  max-h-0"></span><span>{{ gitHubProfile.location }}</span>
+                                                <span class="mr-3 ">{{ user.bio }}</span><span
+                                                    class="mr-3 border-r border-gray-600  max-h-0"></span><span>{{ user.location }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -112,35 +117,17 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="flex pt-2  text-sm text-gray-400">
-                                    <div class="flex-1 inline-flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path
-                                                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
-                                            </path>
-                                        </svg>
-                                        <p class="">{{ gitHubProfile.followers }} Followers</p>
-                                    </div>
-                                    <div class="flex-1 inline-flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path
-                                                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
-                                            </path>
-                                        </svg>
-                                        <p class="">{{ gitHubProfile.following }} Following</p>
-                                    </div>
+                                <div class="flex justify-end pt-2  text-sm text-gray-400">
                                     <button
                                         @click="printCV()"
                                         class="flex-no-shrink bg-blue-400 hover:bg-blue-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-blue-500 hover:border-blue-800 text-white rounded-full transition ease-in duration-300">
-                                        Print CV
+                                        {{labels.print_cv}}
                                     </button>
                                     <a 
-                                        :href="'https://api.whatsapp.com/send?phone=' + contact.whatsappPhone"
+                                        :href="'https://api.whatsapp.com/send?phone=' + user.whatsappPhone"
                                         target="_blank"
                                         class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-500 hover:border-green-800 text-white rounded-full transition ease-in duration-300">
-                                        Contact
+                                        {{labels.contact}}
                                     </a>
                                 </div>
                             </div>
@@ -161,10 +148,10 @@
                                 <i class="fab fa-behance text-xl text-gray-400"></i>
                             </div>
                             <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">+{{projects.length}}</div>
-                            <div class="text-sm text-gray-500">Projects I worked on</div>
+                            <div class="text-sm text-gray-500">{{labels.projects_worked_on}}</div>
                         </div>
                     </div>
-                    <div class="col-span-12 sm:col-span-4">
+                    <a href="https://github.com/leosfont?tab=repositories" target="_blank" class="col-span-12 sm:col-span-4">
                         <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="h-14 w-14  absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 640 512">
@@ -174,10 +161,10 @@
                             <div class="flex justify-between items-center ">
                                 <i class="fab fa-codepen text-xl text-gray-400"></i>
                             </div>
-                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">{{ gitHubProfile.public_repos }}</div>
-                            <div class="text-sm text-gray-500">Public Repositories</div>
+                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">{{ gitHubRepositories.length || 0 }}</div>
+                            <div class="text-sm text-gray-500">{{ labels.public_repositories }}</div>
                         </div>
-                    </div>
+                    </a>
                     <div class="col-span-12 sm:col-span-4">
                         <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +174,7 @@
                                 <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                             </svg>
                             <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">{{technologies.length}}</div>
-                            <div class="text-sm text-gray-500">Technologies used</div>
+                            <div class="text-sm text-gray-500">{{ labels.technologies_used }}</div>
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-4">
@@ -201,8 +188,8 @@
                                 <i class="fab fa-codepen text-xl text-gray-400"></i>
                             </div>
                             <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
-                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">Coming soon</div>
-                            <div class="text-sm text-gray-500">Blog Posts</div>
+                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">{{ labels.coming_soon }}</div>
+                            <div class="text-sm text-gray-500">{{ labels.blog_posts }}</div>
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-4">
@@ -216,8 +203,8 @@
                                 <i class="fab fa-codepen text-xl text-gray-400"></i>
                             </div>
                             <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
-                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">Coming soon</div>
-                            <div class="text-sm text-gray-500">Games developed</div>
+                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">{{ labels.coming_soon }}</div>
+                            <div class="text-sm text-gray-500">{{ labels.games_developed }}</div>
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-4">
@@ -233,14 +220,14 @@
                                 <i class="fab fa-codepen text-xl text-gray-400"></i>
                             </div>
                             <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
-                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">Coming soon</div>
-                            <div class="text-sm text-gray-500">Feedbacks</div>
+                            <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">{{ labels.coming_soon }}</div>
+                            <div class="text-sm text-gray-500">{{ labels.feedbacks }}</div>
                         </div>
                     </div>
                
                     
                 </div>
-                <h3 class="mt-3 text-white">Projects I worked on</h3>
+                <h3 class="mt-3 text-white">{{labels.projects_worked_on}}</h3>
                 <div id="projects" v-for="project in projects" class="flex flex-col">
                     <div class="p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
                         <div class="flex-none lg:flex">
@@ -252,9 +239,9 @@
                                     <div class="flex items-center  justify-between min-w-0">
                                         
                                         <h2 class="mr-auto   text-base text-gray-100 font-medium truncate">
-                                            <div class="text-gray-400 text-xs">Project name:</div>
-                                            {{ project.project_name }}<br>
-                                            <div class="text-xs text-purple-500">Company: {{ project.company_name }}</div>
+                                            <div class="text-gray-400 text-xs">{{labels.project_name}}</div>
+                                            {{ project.lang[language].project_name }}<br>
+                                            <div class="text-xs text-purple-500 mt-3">{{labels.company}}: {{ project.company_name }}</div>
                                         </h2>
                                         <div class="flex items-center font-medium text-gray-300 ">
                                             {{ project.duration }}
@@ -262,23 +249,23 @@
                                     </div>
                                 </div>
                                 <div class="flex flex-col text-sm font-medium mt-3">
-                                    <div class="text-white text-sm mt-3">Devops Technologies:</div>
+                                    <div class="text-white text-sm mt-3">{{labels.devops_technologies}}:</div>
                                     <p class="flex items-center text-sm text-gray-400">
                                         <span class="mr-3" v-for="tech in project.devops_technologies">{{ tech }}</span>
                                     </p>
                                     <div v-if="project.methodologies?.length" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-green-300 mt-3">
-                                        Methodologies:<br> <span v-for="meth in project.methodologies">{{ meth }}</span></span>
+                                        {{ labels.methodologies }}:<br> <span v-for="meth in project.methodologies">{{ meth }}</span></span>
                                     </div>
-                                    <div class="text-white text-sm mt-3">Develop Technologies:</div>
+                                    <div class="text-white text-sm mt-3">{{ labels.develop_technologies }}:</div>
                                     <div class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-gray-500">
                                         <span v-for="tech in project.develop_technologies">{{ tech }}</span>
                                     </div>
                                     <div v-if="project.integrations?.length" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-yellow-500 mt-3">
-                                        Integrations:<br> <span v-for="integration in project.integrations">{{ integration }}</span>
+                                        {{ labels.integrations }}:<br> <span v-for="integration in project.integrations">{{ integration }}</span>
                                     </div>
                                     <div class="mt-3 text-white" v-if="project.description">
-                                        Description:<br>
-                                        <span class="text-xs text-gray-400">{{ project.description }}</span>
+                                        {{ labels.description }}:<br>
+                                        <span class="text-xs text-gray-400">{{ project.lang[language].description }}</span>
                                     </div>
                                 </div>
                             </div>
