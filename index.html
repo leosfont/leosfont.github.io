@@ -263,7 +263,7 @@
                                     <div v-if="project.integrations?.length" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-yellow-500 mt-3">
                                         {{ labels.integrations }}:<br> <span v-for="integration in project.integrations">{{ integration }}</span>
                                     </div>
-                                    <div class="mt-3 text-white" v-if="project.description">
+                                    <div class="mt-3 text-white">
                                         {{ labels.description }}:<br>
                                         <span class="text-xs text-gray-400">{{ project.lang[language].description }}</span>
                                     </div>
