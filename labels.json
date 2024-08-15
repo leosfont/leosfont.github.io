@@ -26,7 +26,7 @@
         "blog_posts": "Blog Posts",
         "games_developed": "Games developed",
         "feedbacks": "Feedbacks",
-        "projects_worked_on": "Projects I worked on",
+        "projects_i_worked_on": "Projects I worked on",
         "project_name": "Project name:",
         "company_name": "Company:",
         "name": "Name",
@@ -40,7 +40,12 @@
         "about": "About",
         "resume": "Resume",
         "languages": "Languages",
-        "my_projects": "My Projects"
+        "my_projects": "My Projects",
+        "companies_i_worked_on": "Companies I worked on",
+        "years_of_experience": "Years of Experience",
+        "certificates": "Certificates",
+        "clients_i_worked_on": "Clients I worked on",
+        "year": "Year"
       },
       "pt": {
         "contact_information": "Informações de Contato",
@@ -68,7 +73,7 @@
         "blog_posts": "Posts do Blog",
         "games_developed": "Jogos Desenvolvidos",
         "feedbacks": "Feedbacks",
-        "projects_worked_on": "Projetos em que trabalhei",
+        "projects_i_worked_on": "Projetos em que trabalhei",
         "project_name": "Nome do Projeto:",
         "company_name": "Empresa:",
         "name": "Nome",
@@ -82,7 +87,12 @@
         "about": "Sobre",
         "resume": "Currículo",
         "languages": "Idiomas",
-        "my_projects": "Meus Projetos"
+        "my_projects": "Meus Projetos",
+        "companies_i_worked_on": "Empresas em que trabalhei",
+        "years_of_experience": "Anos de experiência",
+        "certificates": "Certificados",
+        "clients_i_worked_on": "Clientes em que trabalhei",
+        "year": "Ano"
       }
     }
   }

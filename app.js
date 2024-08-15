@@ -12,13 +12,14 @@ new Vue({
             portfolioUrl: 'https://leosfont.github.io',
             linkedinUrl: 'https://www.linkedin.com/in/leosfont/',
             avatar: './avatar.jpeg',
-            projects: [],
         },
         gitHubRepositories: [],
         projects: [],
+        companies: [],
+        clients: [],
         technologies: [],
         showNotification: true,
-        currentComponent: 'projects',
+        currentComponent: 'companies',
         language: 'en',
         labels: {}
     },
@@ -35,7 +36,6 @@ new Vue({
                 .then(response => response.json())
                 .then(data => {
                     this.labels= data.lang[this.language];
-                    console.log('labels', this.labels)
                 })
                 .catch(error => console.error(error));
 
@@ -44,6 +44,7 @@ new Vue({
                 .then(data => {
                     this.projects = data;
                     this.processTechnologies();
+                    this.populateCompaniesAndClients();
                 })
                 .catch(error => console.error(error));
         },
@@ -52,9 +53,8 @@ new Vue({
                 .then(response => response.json())
                 .then(data => {
                     this.gitHubRepositories = data;
-                    console.log(this.gitHubRepositories);
                 })
-                .catch(error => console.log(error));
+                .catch(error => console.error(error));
         },
         processTechnologies() {
             this.projects.forEach(project => {
@@ -79,6 +79,82 @@ new Vue({
                 }
             });
         },
+        populateCompaniesAndClients() {
+            const companies = {};
+            const clients = {};
+
+            this.projects.forEach(project => {
+                const { company, type, develop_technologies, devops_technologies, duration, methodologies } = project;
+
+                if (type === 'company') {
+                    if (!companies[company]) {
+                        companies[company] = {
+                            develop_technologies: new Set(),
+                            devops_technologies: new Set(),
+                            methodologies: new Set(),
+                            durations: []
+                        };
+                    }
+
+                    develop_technologies.forEach(tech => companies[company].develop_technologies.add(tech));
+                    devops_technologies.forEach(devops => companies[company].devops_technologies.add(devops));
+                    methodologies.forEach(metho => companies[company].methodologies.add(metho));
+                }
+
+                if (type === 'client') {
+                    if (!clients[company]) {
+                        clients[company] = {
+                            develop_technologies: new Set(),
+                            devops_technologies: new Set(),
+                            methodologies: new Set(),
+                            durations: []
+                        };
+                    }
+                    develop_technologies.forEach(tech => clients[company].develop_technologies.add(tech));
+                    devops_technologies.forEach(devops => clients[company].devops_technologies.add(devops));
+                    methodologies.forEach(metho => clients[company].methodologies.add(metho));
+                }
+                
+                if (type === 'company') {
+                    companies[company].durations.push(duration);
+                }
+
+                if (type === 'client') {
+                    clients[company].durations.push(duration);
+                }
+            });
+
+            this.clients = Object.entries(clients).map(([company, data]) => ({
+                name: company,
+                develop_technologies: Array.from(data.develop_technologies),
+                devops_technologies: Array.from(data.devops_technologies),
+                methodologies: Array.from(data.methodologies),
+                duration: this.formatDurationRange(data.durations)
+            }));
+
+            this.companies = Object.entries(companies).map(([company, data]) => ({
+                name: company,
+                develop_technologies: Array.from(data.develop_technologies),
+                devops_technologies: Array.from(data.devops_technologies),
+                methodologies: Array.from(data.methodologies),
+                duration: this.formatDurationRange(data.durations)
+            }));
+        },
+        formatDurationRange(durations) {
+            const years = durations.map(duration => {
+                const year = parseInt(duration);
+                return { start: year, end: year };
+            });
+
+            const startYear = Math.min(...years.map(year => year.start));
+            const endYear = Math.max(...years.map(year => year.end));
+            if (startYear != endYear) {
+                return `${startYear} - ${endYear}`;
+            } else {
+                return `${startYear}`
+            }
+            
+        },
         printCV() {
             const html = `
                 <html>
@@ -102,32 +178,68 @@ new Vue({
                         </section>
                         
                         <section>
-                            <h2 class="text-2xl font-semibold mb-4">${this.labels.projects}</h2>
-                            ${this.projects.map(project => 
+                            <h2 class="text-2xl font-semibold mt-4">${this.labels.companies_i_worked_on}</h2>
+                            ${this.companies.map(company => 
                                 `<div class="mb-8 pb-4 border-b border-gray-300">
-                                    <h3 class="text-xl font-semibold mb-2">${project.lang[this.language].project_name}</h3>
-                                    ${project.image ? `<img src="${project.image}" alt="Project Image" class="max-w-xs mb-4">` : ''}
-                                    <p><strong>${this.labels.company}:</strong> ${project.company_name}</p>
-                                    <p><strong>${this.labels.duration}:</strong> ${project.duration}</p>
-                                    <p><strong>${this.labels.devops_technologies}:</strong> ${(project.devops_technologies || []).join(', ')}</p>
-                                    ${project.methodologies?.length ? `<p><strong>${this.labels.methodologies}:</strong> ${(project.methodologies || []).join(', ')}</p>` : ''}
-                                    <p><strong>${this.labels.develop_technologies}:</strong> ${(project.develop_technologies || []).join(', ')}</p>
-                                    ${project.integrations?.length ? `<p><strong>${this.labels.integrations}:</strong> ${(project.integrations || []).join(', ')}</p>` : ''}
-                                    ${project.lang[this.language].description ? `<p><strong>${this.labels.description}:</strong> ${project.lang[this.language].description}</p>` : ''}
+                                    <h3 class="text-xl font-semibold mb-2 text-indigo-600">${company.name}</h3>
+                                    <p class="text-gray-700"><strong>${this.labels.duration}:</strong> ${company.duration}</p>
+                                    <div class="bg-indigo-50 p-4 rounded-lg">
+                                        <h4 class="text-lg font-medium text-indigo-700 mb-2">${this.labels.projects}</h4>
+                                        ${this.projects.map(project => project.type === 'company' && project.company === company.name ?
+                                        `<div class="mb-4">
+                                            <strong class="block mb-2 text-indigo-900">${project.lang[this.language].project_name}</strong>
+                                            ${project.image ? `<img src="${project.image}" alt="Project Image" class="max-w-xs mb-4 rounded-lg shadow-lg">` : ''}
+                                            <p class="text-gray-600"><strong>${this.labels.duration}:</strong> ${this.formatDurationRange(project.duration)}</p>
+                                            <p class="text-gray-600"><strong>${this.labels.devops_technologies}:</strong> ${(project.devops_technologies || []).join(', ')}</p>
+                                            ${project.methodologies?.length ? `<p class="text-gray-600"><strong>${this.labels.methodologies}:</strong> ${(project.methodologies || []).join(', ')}</p>` : ''}
+                                            <p class="text-gray-600"><strong>${this.labels.develop_technologies}:</strong> ${(project.develop_technologies || []).join(', ')}</p>
+                                            ${project.integrations?.length ? `<p class="text-gray-600"><strong>${this.labels.integrations}:</strong> ${(project.integrations || []).join(', ')}</p>` : ''}
+                                            <p class="text-gray-600"><strong>${this.labels.description}:</strong> ${project.lang[this.language].description}</p>
+                                        </div>` : '').join('')}
+                                    </div>
+                                </div>`
+                            ).join('')}
+                        </section>
+        
+                        <section>
+                            <h2 class="text-2xl font-semibold mt-4">${this.labels.clients_i_worked_on}</h2>
+                            ${this.clients.map(client => 
+                                `<div class="mb-8 pb-4 border-b border-gray-300">
+                                    <h3 class="text-xl font-semibold mb-2 text-green-600">${client.name}</h3>
+                                    <p class="text-gray-700"><strong>${this.labels.duration}:</strong> ${client.duration}</p>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="text-lg font-medium text-green-700 mb-2">${this.labels.projects}</h4>
+                                        ${this.projects.map(project => project.type === 'client' && project.company === client.name ?
+                                        `<div class="mb-4">
+                                            <strong class="block mb-2 text-green-900">${project.lang[this.language].project_name}</strong>
+                                            ${project.image ? `<img src="${project.image}" alt="Project Image" class="max-w-xs mb-4 rounded-lg shadow-lg">` : ''}
+                                            <p class="text-gray-600"><strong>${this.labels.duration}:</strong> ${this.formatDurationRange(project.duration)}</p>
+                                            <p class="text-gray-600"><strong>${this.labels.devops_technologies}:</strong> ${(project.devops_technologies || []).join(', ')}</p>
+                                            ${project.methodologies?.length ? `<p class="text-gray-600"><strong>${this.labels.methodologies}:</strong> ${(project.methodologies || []).join(', ')}</p>` : ''}
+                                            <p class="text-gray-600"><strong>${this.labels.develop_technologies}:</strong> ${(project.develop_technologies || []).join(', ')}</p>
+                                            ${project.integrations?.length ? `<p class="text-gray-600"><strong>${this.labels.integrations}:</strong> ${(project.integrations || []).join(', ')}</p>` : ''}
+                                            <p class="text-gray-600"><strong>${this.labels.description}:</strong> ${project.lang[this.language].description}</p>
+                                        </div>` : '').join('')}
+                                    </div>
                                 </div>`
                             ).join('')}
                         </section>
                     </body>
                 </html>
             `;
+
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
         
-            const printWindow = window.open('', '', 'height=600,width=800');
+            const printWindow = window.open(url, '', 'height=600,width=800');
             printWindow.document.open();
             printWindow.document.write(html);
             printWindow.document.close();
             printWindow.focus();
             printWindow.print();
-        },
+
+            URL.revokeObjectURL(url);
+        },        
         changeLanguage() {
             this.loadLanguageFiles();
         }
