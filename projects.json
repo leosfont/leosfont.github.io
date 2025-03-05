@@ -83,17 +83,17 @@
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": [
-      "Git", "Docker", "Python", "FastAPI", "LangChain", "Mongo", "Pydantic", "Redis", "OpenAI", "Embedding", "LLM"
+      "React", "Next", "Tailwind", "Git", "Docker", "Python", "FastAPI", "LangChain", "Mongo", "Pydantic", "Redis", "OpenAI", "Embedding", "LLM"
     ],
     "devops_technologies": ["Azure DevOps", "AWS", "SES", "EC2", "S3", "RDS", "Kubernetes"],
     "integrations": ["OpenAI", "Stripe"],
     "duration": ["2024"],
     "lang": {
       "en": {
-        "project_name": "API for file loading and prompts for AI reading"
+        "project_name": "Platform for loading files and prompts for reading IA"
       },
       "pt": {
-        "project_name": "API para carregamento de arquivos e prompts para leitura por IA"
+        "project_name": "Plataforma de Rag - para carregamento de arquivos pessados e prompts para leitura de IA"
       }
     }
   },
