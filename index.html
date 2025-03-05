@@ -37,7 +37,7 @@
                         <div class="flex-none sm:flex">
                             <div class=" relative h-32 w-32   sm:mb-0 mb-3">
                                 <img :src="user.avatar" alt="aji"
-                                    class=" w-32 h-32 object-cover rounded-2xl">
+                                    class=" w-32 h-32 object-cover rounded-full">
                             </div>
                             <div class="flex-auto sm:ml-5 justify-evenly">
                                 <div class="flex items-center justify-between sm:mt-2">
@@ -138,7 +138,7 @@
                 </div>
                 <!---stats-->
                 <div class="grid grid-cols-12 gap-4 ">
-                    <div class="col-span-12 sm:col-span-4 cursor-pointer" aria-label="button" @click="currentComponent = 'companies'">
+                    <!-- <div class="col-span-12 sm:col-span-4 cursor-pointer" aria-label="button" @click="currentComponent = 'companies'">
                         <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="h-14 w-14  absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 640 512">
@@ -159,7 +159,7 @@
                             <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">{{ clients.length }}</div>
                             <div class="text-sm text-gray-500">{{ labels.clients_i_worked_on }}</div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-span-12 sm:col-span-4 cursor-pointer" aria-label="button" @click="currentComponent = 'projects'">
                         <div class="p-4 relative bg-gray-800 border border-gray-800 shadow-lg rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg" 
@@ -200,7 +200,7 @@
                         </div>
                     </a>
 
-                    <div class="col-span-12 sm:col-span-4">
+                    <!-- <div class="col-span-12 sm:col-span-4">
                         <div class="p-4 relative bg-gray-800 border border-gray-800 shadow-lg rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="h-14 w-14 absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 640 512">
@@ -225,7 +225,6 @@
                             <div class="flex justify-between items-center ">
                                 <i class="fab fa-codepen text-xl text-gray-400"></i>
                             </div>
-                            <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
                             <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">{{ labels.coming_soon }}</div>
                             <div class="text-sm text-gray-500">{{ labels.blog_posts }}</div>
                         </div>
@@ -240,7 +239,6 @@
                             <div class="flex justify-between items-center ">
                                 <i class="fab fa-codepen text-xl text-gray-400"></i>
                             </div>
-                            <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
                             <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">{{ labels.coming_soon }}</div>
                             <div class="text-sm text-gray-500">{{ labels.games_developed }}</div>
                         </div>
@@ -257,11 +255,10 @@
                             <div class="flex justify-between items-center ">
                                 <i class="fab fa-codepen text-xl text-gray-400"></i>
                             </div>
-                            <!-- <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">?</div> -->
                             <div class="text-2xl text-gray-100 font-medium leading-1 mt-5">{{ labels.coming_soon }}</div>
                             <div class="text-sm text-gray-500">{{ labels.feedbacks }}</div>
                         </div>
-                    </div>     
+                    </div>      -->
                 </div>
 
                 <div v-if="currentComponent === 'companies'" class="mt-3">
@@ -394,10 +391,6 @@
                                         </div>
                                         <div v-if="project.integrations?.length" class="flex-auto items-center flex flex-wrap space-x-3 text-xs text-yellow-500 mt-3">
                                             {{ labels.integrations }}:<br> <span v-for="integration in project.integrations">{{ integration }}</span>
-                                        </div>
-                                        <div class="mt-3 text-white">
-                                            {{ labels.description }}:<br>
-                                            <span class="text-xs text-gray-400">{{ project.lang[language].description }}</span>
                                         </div>
                                     </div>
                                 </div>

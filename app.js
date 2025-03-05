@@ -19,7 +19,7 @@ new Vue({
         clients: [],
         technologies: [],
         showNotification: true,
-        currentComponent: 'companies',
+        currentComponent: 'projects',
         language: 'en',
         labels: {}
     },
@@ -157,89 +157,68 @@ new Vue({
         },
         printCV() {
             const html = `
-                <html>
-                    <head>
-                        <title>CV - ${this.user.name}</title>
-                        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-                    </head>
-                    <body class="bg-gray-100 text-gray-900 p-8">
-                        <header class="text-center my-8">
-                            <img src="${this.user.avatar}" alt="${this.user.name}" class="mx-auto rounded-full w-32 h-32 mb-4">
-                            <h1 class="text-3xl font-bold">${this.user.name}</h1>
-                        </header>
-                        
-                        <section class="mb-8">
-                            <h2 class="text-2xl font-semibold mb-4">${this.labels.contact_information}</h2>
-                            <p><strong>${this.labels.address}:</strong> ${this.user.location}</p>
-                            <p><strong>${this.labels.email}:</strong> ${this.user.email}</p>
-                            <p><strong>${this.labels.phone_whatsapp}:</strong> ${this.user.whatsappPhone}</p>
-                            <p><strong>${this.labels.portfolio}:</strong> <a href="${this.user.portfolioUrl}" class="text-blue-500 underline" target="_blank">${this.user.portfolioUrl}</a></p>
-                            <p><strong>Linkedin:</strong> <a href="${this.user.linkedinUrl}" class="text-blue-500 underline" target="_blank">${this.user.linkedinUrl}</a></p>
-                        </section>
-                        
-                        <section>
-                            <h2 class="text-2xl font-semibold mt-4">${this.labels.companies_i_worked_on}</h2>
-                            ${this.companies.map(company => 
-                                `<div class="mb-8 pb-4 border-b border-gray-300">
-                                    <h3 class="text-xl font-semibold mb-2 text-indigo-600">${company.name}</h3>
-                                    <p class="text-gray-700"><strong>${this.labels.duration}:</strong> ${company.duration}</p>
-                                    <div class="bg-indigo-50 p-4 rounded-lg">
-                                        <h4 class="text-lg font-medium text-indigo-700 mb-2">${this.labels.projects}</h4>
-                                        ${this.projects.map(project => project.type === 'company' && project.company === company.name ?
-                                        `<div class="mb-4">
-                                            <strong class="block mb-2 text-indigo-900">${project.lang[this.language].project_name}</strong>
-                                            ${project.image ? `<img src="${project.image}" alt="Project Image" class="max-w-xs mb-4 rounded-lg shadow-lg">` : ''}
-                                            <p class="text-gray-600"><strong>${this.labels.duration}:</strong> ${this.formatDurationRange(project.duration)}</p>
-                                            <p class="text-gray-600"><strong>${this.labels.devops_technologies}:</strong> ${(project.devops_technologies || []).join(', ')}</p>
-                                            ${project.methodologies?.length ? `<p class="text-gray-600"><strong>${this.labels.methodologies}:</strong> ${(project.methodologies || []).join(', ')}</p>` : ''}
-                                            <p class="text-gray-600"><strong>${this.labels.develop_technologies}:</strong> ${(project.develop_technologies || []).join(', ')}</p>
-                                            ${project.integrations?.length ? `<p class="text-gray-600"><strong>${this.labels.integrations}:</strong> ${(project.integrations || []).join(', ')}</p>` : ''}
-                                            <p class="text-gray-600"><strong>${this.labels.description}:</strong> ${project.lang[this.language].description}</p>
-                                        </div>` : '').join('')}
-                                    </div>
-                                </div>`
-                            ).join('')}
-                        </section>
-        
-                        <section>
-                            <h2 class="text-2xl font-semibold mt-4">${this.labels.clients_i_worked_on}</h2>
-                            ${this.clients.map(client => 
-                                `<div class="mb-8 pb-4 border-b border-gray-300">
-                                    <h3 class="text-xl font-semibold mb-2 text-green-600">${client.name}</h3>
-                                    <p class="text-gray-700"><strong>${this.labels.duration}:</strong> ${client.duration}</p>
-                                    <div class="bg-green-50 p-4 rounded-lg">
-                                        <h4 class="text-lg font-medium text-green-700 mb-2">${this.labels.projects}</h4>
-                                        ${this.projects.map(project => project.type === 'client' && project.company === client.name ?
-                                        `<div class="mb-4">
-                                            <strong class="block mb-2 text-green-900">${project.lang[this.language].project_name}</strong>
-                                            ${project.image ? `<img src="${project.image}" alt="Project Image" class="max-w-xs mb-4 rounded-lg shadow-lg">` : ''}
-                                            <p class="text-gray-600"><strong>${this.labels.duration}:</strong> ${this.formatDurationRange(project.duration)}</p>
-                                            <p class="text-gray-600"><strong>${this.labels.devops_technologies}:</strong> ${(project.devops_technologies || []).join(', ')}</p>
-                                            ${project.methodologies?.length ? `<p class="text-gray-600"><strong>${this.labels.methodologies}:</strong> ${(project.methodologies || []).join(', ')}</p>` : ''}
-                                            <p class="text-gray-600"><strong>${this.labels.develop_technologies}:</strong> ${(project.develop_technologies || []).join(', ')}</p>
-                                            ${project.integrations?.length ? `<p class="text-gray-600"><strong>${this.labels.integrations}:</strong> ${(project.integrations || []).join(', ')}</p>` : ''}
-                                            <p class="text-gray-600"><strong>${this.labels.description}:</strong> ${project.lang[this.language].description}</p>
-                                        </div>` : '').join('')}
-                                    </div>
-                                </div>`
-                            ).join('')}
-                        </section>
-                    </body>
-                </html>
+              <html>
+                <head>
+                  <title>CV - ${this.user.name}</title>
+                  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+                </head>
+                <body class="bg-gray-100 text-gray-900 p-8">
+                  <header class="text-center my-8">
+                    <img src="${this.user.avatar}" alt="${this.user.name}" class="mx-auto rounded-full w-32 h-32 mb-4">
+                    <h1 class="text-3xl font-bold">${this.user.name}</h1>
+                  </header>
+                  
+                  <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">${this.labels.contact_information}</h2>
+                    <p><strong>${this.labels.address}:</strong> ${this.user.location}</p>
+                    <p><strong>${this.labels.email}:</strong> ${this.user.email}</p>
+                    <p><strong>${this.labels.phone_whatsapp}:</strong> ${this.user.whatsappPhone}</p>
+                    <p><strong>${this.labels.portfolio}:</strong> <a href="${this.user.portfolioUrl}" class="text-blue-500 underline" target="_blank">${this.user.portfolioUrl}</a></p>
+                    <p><strong>Linkedin:</strong> <a href="${this.user.linkedinUrl}" class="text-blue-500 underline" target="_blank">${this.user.linkedinUrl}</a></p>
+                  </section>
+                  
+                  <section>
+                    <h2 class="text-2xl font-semibold mt-4">${this.labels.projects_i_worked_on}</h2>
+                    ${this.projects.map(project => `
+                      <div class="mb-8 pb-4 border-b border-gray-300">
+                        <h3 class="text-medium font-semibold mb-2">${project.lang[this.language].project_name}</h3>
+                        ${project.image ? `<img src="${project.image}" alt="Project Image" class="max-w-xs mb-4 rounded-lg shadow-lg">` : ''}
+                        <div class="mt-2">
+                          <h4 class="text-lg font-small mb-2">${this.labels.develop_technologies}:</h4>
+                          <p class="text-gray-600">${(project.develop_technologies || []).join(', ')}</p>
+                        </div>
+                        ${project.devops_technologies && project.devops_technologies.length ? `
+                        <div class="mt-2">
+                          <h4 class="text-lg font-small mb-2">${this.labels.devops_technologies}:</h4>
+                          <p class="text-gray-600">${(project.devops_technologies || []).join(', ')}</p>
+                        </div>` : ''}
+                        ${project.methodologies && project.methodologies.length ? `
+                        <div class="mt-2">
+                          <h4 class="text-lg font-small mb-2">${this.labels.methodologies}:</h4>
+                          <p class="text-gray-600">${(project.methodologies || []).join(', ')}</p>
+                        </div>` : ''}
+                        ${project.integrations && project.integrations.length ? `
+                        <div class="mt-2">
+                          <h4 class="text-lg font-small mb-2">${this.labels.integrations}:</h4>
+                          <p class="text-gray-600">${(project.integrations || []).join(', ')}</p>
+                        </div>` : ''}
+                      </div>
+                    `).join('')}
+                  </section>
+                </body>
+              </html>
             `;
-
+          
             const blob = new Blob([html], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
-        
             const printWindow = window.open(url, '', 'height=600,width=800');
             printWindow.document.open();
             printWindow.document.write(html);
             printWindow.document.close();
             printWindow.focus();
             printWindow.print();
-
             URL.revokeObjectURL(url);
-        },        
+        },               
         changeLanguage() {
             this.loadLanguageFiles();
         }

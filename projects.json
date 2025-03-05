@@ -1,7 +1,85 @@
 [
   {
-    "company": "Vortigo",
-    "type": "company",
+    "image": null,
+    "methodologies": ["Scrum"],
+    "develop_technologies": ["Git", "Node", "React", "Typescript", "HTML", "SCSS", "Tailwind", "Mateirial UI", "Firebase", "Storage", "Authentication", "Firestore", "Autentication", "Cloud Functions"],
+    "devops_technologies": ["GitHub", "Firebase Hosting"],
+    "integrations": ["Syonet", "Meta", "Asaas"],
+    "duration": ["2024", "2025"],
+    "lang": {
+      "en": {
+        "project_name": "Platform for management of leads, sales and events for cars"
+      },
+      "pt": {
+        "project_name": "Plataforma para gerenciamento de leads, vendas e eventos de automóveis"
+      }
+    }
+  },
+  {
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["PHP", "Mysql", "CSS", "Laravel", "JQuery", "Docker", "Firebase", "Notifications", "Storage"],
+    "devops_technologies": ["GitHub", "SSH", "Google Cloud"],
+    "integrations": ["Denatran", "Asaas"],
+    "duration": ["2024", "2025"],
+    "lang": {
+      "en": {
+        "project_name": "Platform B2C and B2B for sale of services and maintenance plans for vehicles"
+      },
+      "pt": {
+        "project_name": "Plataforma B2C e B2B para venda de serviços e planos de manutenção para veículos"
+      }
+    }
+  },
+  {
+    "image": null,
+    "methodologies": ["Kanban", "Scrum"],
+    "develop_technologies": [
+      "Git", "Test Integration", "Docker", "HTML", "CSS", "MySQL", "PHP", "Laravel", "Redis", "Lumen", "Node", "Express", "JavaScript", "jQuery", "Microservices", "Bootstrap", "Vue", "Firebase"
+    ],
+    "devops_technologies": ["Jira", "Azure DevOps", "Jelastic", "AWS", "EC2", "SES", "S3", "RDS", "Kubernetes", "SonarQube", "Lens"],
+    "duration": ["2019", "2020", "2021", "2022", "2023", "2024"],
+    "lang": {
+      "en": {
+        "project_name": "System and portal for consultants"
+      },
+      "pt": {
+        "project_name": "Sistema e portal para consultores"
+      }
+    }
+  },
+    {
+    "image": null,
+    "methodologies": ["Kanban", "Scrum"],
+    "develop_technologies": ["Git", "Docker", "HTML", "CSS", "MySQL", "PHP", "CakePHP2", "October", "JavaScript", "jQuery", "Vue"],
+    "devops_technologies": ["SSH", "Filezilla", "Jira", "Azure DevOps", "Jelastic", "AWS"],
+    "integrations": ["Rede", "Sped NFe"],
+    "duration": ["2019", "2020", "2021", "2022", "2023", "2024"],
+    "lang": {
+      "en": {
+        "project_name": "ERP System and E-Commerce Site"
+      },
+      "pt": {
+        "project_name": "Sistema ERP e Site de E-Commerce"
+      }
+    }
+  },
+  {
+    "image": null,
+    "methodologies": ["Kanban"],
+    "develop_technologies": ["Node", "TypeScript", "Vue2", "SocketIO", "PIXIjs", "Texture Packer", "Mysql", "SCSS", "Docker", "Firebase", "Autentication"],
+    "devops_technologies": ["GitHub"],
+    "duration": ["2024", "2025"],
+    "lang": {
+      "en": {
+        "project_name": "2D Platformer MOBA similar to League of Legends or Dota 2"
+      },
+      "pt": {
+        "project_name": "Plataforma 2D MOBA semelhante ao League of Legends ou Dota 2"
+      }
+    }
+  },
+  {
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": [
@@ -12,18 +90,14 @@
     "duration": ["2024"],
     "lang": {
       "en": {
-        "project_name": "API for file loading and prompts for AI reading",
-        "description": "Worked on creating a service and RAG API for assistant control and document importation for use with language models."
+        "project_name": "API for file loading and prompts for AI reading"
       },
       "pt": {
-        "project_name": "API para carregamento de arquivos e prompts para leitura por IA",
-        "description": "Trabalhei na criação de um serviço e API RAG para controle de assistentes e importação de documentos para uso com modelos de linguagem."
+        "project_name": "API para carregamento de arquivos e prompts para leitura por IA"
       }
     }
   },
   {
-    "company": "Vortigo",
-    "type": "company",
     "image": null,
     "methodologies": ["Scrum"],
     "develop_technologies": ["Git", "Docker", "TDD", "MySQL", "TypeScript", "NestJS", "JWT", "TypeORM", "Swagger", "React"],
@@ -31,18 +105,14 @@
     "duration": ["2023"],
     "lang": {
       "en": {
-        "project_name": "System for Online Medicine",
-        "description": "Worked on adjustments and functionalities for the back-office part of the platform."
+        "project_name": "System for Online Medicine"
       },
       "pt": {
-        "project_name": "Sistema para Medicina Online",
-        "description": "Trabalhei em ajustes e funcionalidades para a parte de back-office da plataforma."
+        "project_name": "Sistema para Medicina Online"
       }
     }
   },
   {
-    "company": "Orquidario Santo Expedito",
-    "type": "client",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "Docker", "MySQL", "PHP", "Laravel", "HTML", "CSS", "JavaScript", "Vue"],
@@ -51,18 +121,14 @@
     "duration": ["2022", "2023", "2024"],
     "lang": {
       "en": {
-        "project_name": "Personalized E-Commerce for Selling Plants",
-        "description": "Worked on the complete creation of the store and CMS for order control and website content."
+        "project_name": "Personalized E-Commerce for Selling Plants"
       },
       "pt": {
-        "project_name": "E-Commerce Personalizado para Venda de Plantas",
-        "description": "Trabalhei na criação completa da loja e CMS para controle de pedidos e conteúdo do site."
+        "project_name": "E-Commerce Personalizado para Venda de Plantas"
       }
     }
   },
   {
-    "company": "Token Arquitetura",
-    "type": "client",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "Docker", "MySQL", "PHP", "HTML", "CSS", "Laravel", "JavaScript", "Vue"],
@@ -70,18 +136,14 @@
     "duration": ["2022"],
     "lang": {
       "en": {
-        "project_name": "System and Website for Architects",
-        "description": "Worked on the complete creation of the portfolio and system for document exchange with end clients."
+        "project_name": "System and Website for Architects"
       },
       "pt": {
-        "project_name": "Sistema e Website para Arquitetos",
-        "description": "Trabalhei na criação completa do portfólio e sistema para troca de documentos com clientes finais."
+        "project_name": "Sistema e Website para Arquitetos"
       }
     }
   },
   {
-    "company": "Vortigo",
-    "type": "company",
     "image": null,
     "methodologies": ["Scrum"],
     "develop_technologies": ["Git", "Docker", "TDD", "Python", "Pandas", "Lambda", "Node", "NestJS", "HTML", "CSS", "JavaScript", "React"],
@@ -89,18 +151,14 @@
     "duration": ["2022"],
     "lang": {
       "en": {
-        "project_name": "Shoe Manufacturing System",
-        "description": "Worked on developing functionalities for the shoe import flow."
+        "project_name": "Shoe Manufacturing System"
       },
       "pt": {
-        "project_name": "Sistema de Fabricação de Calçados",
-        "description": "Trabalhei no desenvolvimento de funcionalidades para o fluxo de importação de calçados."
+        "project_name": "Sistema de Fabricação de Calçados"
       }
     }
   },
   {
-    "company": "Vortigo",
-    "type": "company",
     "image": null,
     "methodologies": ["Scrum"],
     "develop_technologies": ["Git", "TDD", "DynamoDB", "Codacy", "Kafka", "Golang", "Bazel", "Microservices", "gRPC"],
@@ -109,18 +167,14 @@
     "duration": ["2022"],
     "lang": {
       "en": {
-        "project_name": "Service and Plugin for Payment with Pix in Installments",
-        "description": "Worked on developing functionalities for the registration and payment flow."
+        "project_name": "Service and Plugin for Payment with Pix in Installments"
       },
       "pt": {
-        "project_name": "Serviço e Plugin para Pagamento com Pix Parcelado",
-        "description": "Trabalhei no desenvolvimento de funcionalidades para o fluxo de cadastro e pagamento."
+        "project_name": "Serviço e Plugin para Pagamento com Pix Parcelado"
       }
     }
   },
   {
-    "company": "Oral Brasil",
-    "type": "client",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "Docker", "HTML", "CSS", "JavaScript", "PHP", "MySQL", "Eloquent", "jQuery", "Ajax", "Vue.js"],
@@ -129,18 +183,14 @@
     "duration": ["2021"],
     "lang": {
       "en": {
-        "project_name": "System for Dentistry",
-        "description": "Worked on adjustments and creation of components, as well as reporting functionalities and payment integrations."
+        "project_name": "System for Dentistry"
       },
       "pt": {
-        "project_name": "Sistema para Odontologia",
-        "description": "Trabalhei em ajustes e criação de componentes, bem como funcionalidades de relatórios e integrações de pagamento."
+        "project_name": "Sistema para Odontologia"
       }
     }
   },
   {
-    "company": "Vortigo",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "PHP", "Magento", "HTML", "CSS", "JavaScript"],
@@ -148,59 +198,14 @@
     "duration": ["2020"],
     "lang": {
       "en": {
-        "project_name": "Marketplace",
-        "description": "Worked on bug fixes."
+        "project_name": "Marketplace"
       },
       "pt": {
-        "project_name": "Marketplace",
-        "description": "Trabalhei em ajustes de bugs."
+        "project_name": "Marketplace"
       }
     }
   },
   {
-    "company": "Vortigo",
-    "type": "company",
-    "image": null,
-    "methodologies": ["Kanban", "Scrum"],
-    "develop_technologies": [
-      "Git", "Test Integration", "Docker", "HTML", "CSS", "MySQL", "PHP", "Laravel", "Redis", "Lumen", "Node", "Express", "JavaScript", "jQuery", "Microservices", "Bootstrap", "Vue", "Firebase"
-    ],
-    "devops_technologies": ["Jira", "Azure DevOps", "Jelastic", "AWS", "EC2", "SES", "S3", "RDS", "Kubernetes", "SonarQube", "Lens"],
-    "duration": ["2019", "2020", "2021", "2022", "2023", "2024"],
-    "lang": {
-      "en": {
-        "project_name": "System and portal for consultants",
-        "description": "Worked on adjustments and development of components and new features: creation of CMS for portal content control, import service."
-      },
-      "pt": {
-        "project_name": "Sistema e portal para consultores",
-        "description": "Trabalhei em ajustes e desenvolvimento de componentes e novas funcionalidades: criação de CMS para controle de conteúdo do portal, serviço de importação."
-      }
-    }
-  },
-  {
-    "company": "Vortigo",
-    "type": "company",
-    "image": null,
-    "methodologies": ["Kanban", "Scrum"],
-    "develop_technologies": ["Git", "Docker", "HTML", "CSS", "MySQL", "PHP", "CakePHP2", "October", "JavaScript", "jQuery", "Vue"],
-    "devops_technologies": ["SSH", "Filezilla", "Jira", "Azure DevOps", "Jelastic", "AWS"],
-    "integrations": ["Rede", "Sped NFe"],
-    "duration": ["2019", "2020", "2021", "2022", "2023", "2024"],
-    "lang": {
-      "en": {
-        "project_name": "ERP System and E-Commerce Site",
-        "description": "Worked on adjustments and development of components and new features: payment flow, reports, website content control, and more."
-      },
-      "pt": {
-        "project_name": "Sistema ERP e Site de E-Commerce",
-        "description": "Trabalhei em ajustes e desenvolvimento de componentes e novas funcionalidades: fluxo de pagamento, relatórios, controle de conteúdo do site e mais."
-      }
-    }
-  },
-  {
-    "company": "Vortigo",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "MongoDB", "Laravel", "HTML", "CSS", "JavaScript", "JQuery"],
@@ -208,18 +213,14 @@
     "duration": ["2019"],
     "lang": {
       "en": {
-        "project_name": "System for Labelled Product Control",
-        "description": "Worked on bug fixes."
+        "project_name": "System for Labelled Product Control"
       },
       "pt": {
-        "project_name": "Sistema para controle de produtos etiquetados",
-        "description": "Trabalhei em ajustes de bugs."
+        "project_name": "Sistema para controle de produtos etiquetados"
       }
     }
   },
   {
-    "company": "RGK Investimentos Imobiliários",
-    "type": "client",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "PHP", "MySQL", "CSS", "HTML", "WordPress", "JavaScript", "jQuery", "Bootstrap"],
@@ -227,75 +228,59 @@
     "duration": ["2019"],
     "lang": {
       "en": {
-        "project_name": "Real Estate System",
-        "description": "Worked on adjustments and component creation, as well as functionalities and integrations with real estate portals."
+        "project_name": "Real Estate System"
       },
       "pt": {
-        "project_name": "Sistema Imobiliário",
-        "description": "Trabalhei em ajustes e criação de componentes, bem como funcionalidades e integrações com portais imobiliários"
+        "project_name": "Sistema Imobiliário"
       }
     }
   },
   {
-    "company": "Reweb",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["PHP", "MySQL", "CSS", "HTML", "CodeIgniter Framework", "JavaScript", "jQuery", "Bootstrap"],
-    "devops_technologies": ["Pipefy", "Bitbucket", "Jira"],
+    "devops_technologies": ["Bitbucket", "Jira"],
     "duration": ["2018", "2019"],
     "lang": {
       "en": {
-        "project_name": "Used Car Sales Website",
-        "description": "Worked on adjustments and creation of functionalities: development of components and additional screen filter."
+        "project_name": "Used Car Sales Website"
       },
       "pt": {
-        "project_name": "Site de Venda de Carros Usados",
-        "description": "Trabalhei em ajustes e criação de funcionalidades: desenvolvimento de componentes e filtro adicional na tela."
+        "project_name": "Site de Venda de Carros Usados"
       }
     }
   },
   {
-    "company": "Reweb",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["PHP", "MySQL", "CSS", "HTML", "Phalcon Framework", "JavaScript", "jQuery", "Bootstrap", "Angular"],
     "duration": ["2018", "2019"],
-    "devops_technologies": ["Pipefy", "SSH", "Filezilla"],
+    "devops_technologies": ["SSH", "Filezilla"],
     "lang": {
       "en": {
-        "project_name": "Subscription Portal for Advertisers",
-        "description": "Worked on adjustments and creation of functionalities: development of reports and reCAPTCHA in the payment flow."
+        "project_name": "Subscription Portal for Advertisers"
       },
       "pt": {
-        "project_name": "Portal de Assinatura para Anunciantes",
-        "description": "Trabalhei em ajustes e criação de funcionalidades: desenvolvimento de relatórios e reCAPTCHA no fluxo de pagamento."
+        "project_name": "Portal de Assinatura para Anunciantes"
       }
     }
   },
   {
-    "company": "Reweb",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["PHP", "MySQL", "CSS", "HTML", "Wordpress", "JavaScript", "jQuery", "Bootstrap"],
     "duration": ["2018", "2019"],
-    "devops_technologies": ["Pipefy", "SSH", "Filezilla"],
+    "devops_technologies": ["SSH", "Filezilla"],
     "lang": {
       "en": {
-        "project_name": "Wordpress Websites",
-        "description": "Worked on adjustments and creation of functionalities."
+        "project_name": "Wordpress Websites"
       },
       "pt": {
-        "project_name": "Sites em Wordpress",
-        "description": "Trabalhei em ajustes e criação de funcionalidades."
+        "project_name": "Sites em Wordpress"
       }
     }
   },
   {
-    "company": "Fernando Jobin",
-    "type": "client",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "PHP", "CSS", "HTML", "WordPress", "MySQL", "JavaScript", "Bootstrap", "jQuery"],
@@ -303,37 +288,29 @@
     "duration": ["2019"],
     "lang": {
       "en": {
-        "project_name": "Designer Portfolio Website Creation",
-        "description": "Worked on the complete creation of the portfolio."
+        "project_name": "Designer Portfolio Website Creation"
       },
       "pt": {
-        "project_name": "Criação de Website para Portfólio de Designer",
-        "description": "Trabalhei na criação completa do portfólio."
+        "project_name": "Criação de Website para Portfólio de Designer"
       }
     }
   },
   {
-    "company": "Reweb",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "PHP", "CSS", "HTML", "Sass", "Node", "Gulp", "MySQL", "October Framework", "JavaScript", "Bootstrap", "jQuery", "Vue2"],
-    "devops_technologies": ["Pipefy", "Gitlab"],
+    "devops_technologies": ["Gitlab"],
     "duration": ["2018", "2019"],
     "lang": {
       "en": {
-        "project_name": "CMS v2: Facilitation of Automotive Websites",
-        "description": "Worked on adjustments, creation of functionalities, and creation of components for the development of automotive websites."
+        "project_name": "CMS v2: Facilitation of Automotive Websites"
       },
       "pt": {
-        "project_name": "CMS v2: Facilitação de Websites Automotivos",
-        "description": "Trabalhei em ajustes, criação de funcionalidades e desenvolvimento de componentes para websites automotivos."
+        "project_name": "CMS v2: Facilitação de Websites Automotivos"
       }
     }
   },
   {
-    "company": "Reweb",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "PHP", "CSS", "HTML", "MySQL", "Silex Framework", "JavaScript", "jQuery", "Bootstrap", "Twig"],
@@ -341,18 +318,14 @@
     "duration": ["2015-2018"],
     "lang": {
       "en": {
-        "project_name": "Creation of Automotive Websites",
-        "description": "Worked on adjustments and creation of automotive websites using the previously developed CMS."
+        "project_name": "Creation of Automotive Websites"
       },
       "pt": {
-        "project_name": "Criação de Websites Automotivos",
-        "description": "Trabalhei em ajustes e criação de websites automotivos utilizando o CMS desenvolvido anteriormente."
+        "project_name": "Criação de Websites Automotivos"
       }
     }
   },
   {
-    "company": "Reweb",
-    "type": "company",
     "image": null,
     "methodologies": ["Kanban"],
     "develop_technologies": ["Git", "PHP", "CSS", "HTML", "MySQL", "Laravel", "JavaScript", "Bootstrap", "jQuery"],
@@ -360,12 +333,10 @@
     "duration": ["2015"],
     "lang": {
       "en": {
-        "project_name": "CMS: Facilitation of Automotive Websites",
-        "description": "Worked on adjustments and implementations such as theme creation and alteration functionality for the websites among other functionalities."
+        "project_name": "CMS: Facilitation of Automotive Websites"
       },
       "pt": {
-        "project_name": "CMS: Facilitação de Websites Automotivos",
-        "description": "Trabalhei em ajustes e implementações, como criação de temas e funcionalidade de alteração para os websites, entre outras funcionalidades."
+        "project_name": "CMS: Facilitação de Websites Automotivos"
       }
     }
   }
