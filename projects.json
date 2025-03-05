@@ -67,21 +67,6 @@
   {
     "image": null,
     "methodologies": ["Kanban"],
-    "develop_technologies": ["Node", "TypeScript", "Vue2", "SocketIO", "PIXIjs", "Texture Packer", "Mysql", "SCSS", "Docker", "Firebase", "Autentication"],
-    "devops_technologies": ["GitHub"],
-    "duration": ["2024", "2025"],
-    "lang": {
-      "en": {
-        "project_name": "2D Platformer MOBA similar to League of Legends or Dota 2"
-      },
-      "pt": {
-        "project_name": "Plataforma 2D MOBA semelhante ao League of Legends ou Dota 2"
-      }
-    }
-  },
-  {
-    "image": null,
-    "methodologies": ["Kanban"],
     "develop_technologies": [
       "React", "Next", "Tailwind", "Git", "Docker", "Python", "FastAPI", "LangChain", "Mongo", "Pydantic", "Redis", "OpenAI", "Embedding", "LLM"
     ],
