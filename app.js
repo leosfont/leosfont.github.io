@@ -8,7 +8,7 @@ new Vue({
             bio: 'Senior Software Developer',
             email: 'leosfont@gmail.com',
             whatsappPhone: '555185038783',
-            location: 'Viamão RS',
+            location: 'Viamão RS - Brasil',
             portfolioUrl: 'https://leosfont.github.io',
             linkedinUrl: 'https://www.linkedin.com/in/leosfont/',
             avatar: './avatar.jpeg',
@@ -182,6 +182,7 @@ new Vue({
                     ${this.projects.map(project => `
                       <div class="mb-8 pb-4 border-b border-gray-300">
                         <h3 class="text-medium font-semibold mb-2">${project.lang[this.language].project_name}</h3>
+                        <p class="text-gray-600">${this.formatDurationRange(project.duration)}</p>
                         ${project.image ? `<img src="${project.image}" alt="Project Image" class="max-w-xs mb-4 rounded-lg shadow-lg">` : ''}
                         <div class="mt-2">
                           <h4 class="text-lg font-small mb-2">${this.labels.develop_technologies}:</h4>
